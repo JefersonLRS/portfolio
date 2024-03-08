@@ -51,16 +51,23 @@ export function SideBarMobile({ children }: { children: React.ReactNode }) {
 export function SideBarItems({
   icon,
   link,
+  active,
 }: {
   icon: React.ReactNode;
   link: React.ReactNode;
+  active: boolean;
 }) {
   const { expanded, setExpanded } = useContext(SideBarContext);
+
+  const general =
+    "flex relative my-5 rounded-md transition-colors px-2 py-2 font-medium cursor-pointer items-center";
+  const current =
+    "flex relative my-5 rounded-md transition-colors px-2 py-2 font-medium cursor-pointer items-center bg-[#A611DA]";
 
   return (
     <li
       onClick={() => setExpanded((curr: boolean) => !curr)}
-      className="flex relative my-5 rounded-md transition-colors px-2 py-2 font-medium cursor-pointer items-center hover:bg-[#A611DA]"
+      className={active ? current : general}
     >
       {icon}
       <span

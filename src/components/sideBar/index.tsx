@@ -91,18 +91,22 @@ export default function SideBar() {
           <SideBarItems
             icon={<AiOutlineHome size={18} color="#fff" />}
             link={<Link to="/">Home</Link>}
+            active={isCurrentPage("/")}
           />
           <SideBarItems
             icon={<RiComputerLine size={18} color="#fff" />}
             link={<Link to="/projects">Projects</Link>}
+            active={isCurrentPage("/projects")}
           />
           <SideBarItems
             icon={<AiOutlineUser size={18} color="#fff" />}
             link={<Link to="/about">About</Link>}
+            active={isCurrentPage("/about")}
           />
           <SideBarItems
             icon={<AiOutlineMail size={18} color="#fff" />}
             link={<Link to="/contact">Contact</Link>}
+            active={isCurrentPage("/contact")}
           />
         </SideBarMobile>
       </aside>
