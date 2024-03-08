@@ -5,9 +5,11 @@ import { AiOutlineHome, AiOutlineUser, AiOutlineMail } from "react-icons/ai";
 import { RiComputerLine } from "react-icons/ri";
 import { useEffect, useState } from "react";
 import { SideBarItems, SideBarMobile } from "../sideBarMobile";
+import { usePath } from "../../hooks/usePath";
 
 export default function SideBar() {
   const [isMobile, setIsMobile] = useState(false);
+  const { isCurrentPage } = usePath();
 
   useEffect(() => {
     const handleResize = () => {
@@ -21,6 +23,11 @@ export default function SideBar() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const current = "flex items-center gap-6 opacity-100";
+
+  const general =
+    "flex items-center gap-6 opacity-60 hover:opacity-100 transition-all duration-300 ease-in-out";
 
   return (
     <div>
@@ -43,10 +50,7 @@ export default function SideBar() {
           </div>
           <nav className="flex flex-col justify-center gap-7">
             <ul>
-              <Link
-                to="/"
-                className="flex items-center gap-6 opacity-60 hover:opacity-100 transition-all duration-300 ease-in-out"
-              >
+              <Link to="/" className={isCurrentPage("/") ? current : general}>
                 <AiOutlineHome size={18} color="#fff" />
                 <p className="font-medium">Home</p>
               </Link>
@@ -54,7 +58,7 @@ export default function SideBar() {
             <ul>
               <Link
                 to="/projects"
-                className="flex items-center gap-6 opacity-60 hover:opacity-100 transition-all duration-300 ease-in-out"
+                className={isCurrentPage("/projects") ? current : general}
               >
                 <RiComputerLine size={18} color="#fff" />
                 <p className="font-medium">Projects</p>
@@ -63,7 +67,7 @@ export default function SideBar() {
             <ul>
               <Link
                 to="/about"
-                className="flex items-center gap-6 opacity-60 hover:opacity-100 transition-all duration-300 ease-in-out"
+                className={isCurrentPage("/about") ? current : general}
               >
                 <AiOutlineUser size={18} color="#fff" />
                 <p className="font-medium">About</p>
@@ -72,7 +76,7 @@ export default function SideBar() {
             <ul>
               <Link
                 to="/contact"
-                className="flex items-center gap-6 opacity-60 hover:opacity-100 transition-all duration-300 ease-in-out"
+                className={isCurrentPage("/contact") ? current : general}
               >
                 <AiOutlineMail size={18} color="#fff" />
                 <p className="font-medium">Contact</p>
