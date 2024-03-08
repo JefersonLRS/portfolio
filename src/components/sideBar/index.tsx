@@ -1,23 +1,35 @@
 import profilePicture from "../../assets/profilePic.png";
-import logo from "../../assets/logo.svg";
 
 import { Link } from "react-router-dom";
 import { AiOutlineHome, AiOutlineUser, AiOutlineMail } from "react-icons/ai";
 import { RiComputerLine } from "react-icons/ri";
-import { IoMdMenu, IoMdClose } from "react-icons/io";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { SideBarItems, SideBarMobile } from "../sideBarMobile";
 
 export default function SideBar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  function toggleMenu() {
-    setIsMenuOpen(!isMenuOpen);
-  }
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
-    <header className="bg-[#171717] w-full md:h-screen md:w-[20%]">
-      {window.innerWidth > 768 && (
-        <div className="w-full flex flex-col justify-center items-center my-4">
+    <div>
+      <nav
+        className={`${
+          !isMobile ? "bg-[#171717] h-screen w-full p-10" : "hidden"
+        }`}
+      >
+        <div className="w-full flex flex-col justify-center items-center">
           <div>
             <img
               src={profilePicture}
@@ -26,11 +38,11 @@ export default function SideBar() {
             />
           </div>
           <div className="text-center mt-2 mb-14">
-            <p className="text-2xl font-bold">Jeferson Luís</p>
-            <p className="opacity-60">Full-Stack Developer</p>
+            <p className="text-xl font-bold">Jeferson Luís</p>
+            <p className="opacity-60 text-sm">Full-Stack Developer</p>
           </div>
-          <div className="flex flex-col justify-center gap-7">
-            <div>
+          <nav className="flex flex-col justify-center gap-7">
+            <ul>
               <Link
                 to="/"
                 className="flex items-center gap-6 opacity-60 hover:opacity-100 transition-all duration-300 ease-in-out"
@@ -38,8 +50,8 @@ export default function SideBar() {
                 <AiOutlineHome size={18} color="#fff" />
                 <p className="font-medium">Home</p>
               </Link>
-            </div>
-            <div>
+            </ul>
+            <ul>
               <Link
                 to="/projects"
                 className="flex items-center gap-6 opacity-60 hover:opacity-100 transition-all duration-300 ease-in-out"
@@ -47,8 +59,8 @@ export default function SideBar() {
                 <RiComputerLine size={18} color="#fff" />
                 <p className="font-medium">Projects</p>
               </Link>
-            </div>
-            <div>
+            </ul>
+            <ul>
               <Link
                 to="/about"
                 className="flex items-center gap-6 opacity-60 hover:opacity-100 transition-all duration-300 ease-in-out"
@@ -56,8 +68,8 @@ export default function SideBar() {
                 <AiOutlineUser size={18} color="#fff" />
                 <p className="font-medium">About</p>
               </Link>
-            </div>
-            <div>
+            </ul>
+            <ul>
               <Link
                 to="/contact"
                 className="flex items-center gap-6 opacity-60 hover:opacity-100 transition-all duration-300 ease-in-out"
@@ -65,33 +77,31 @@ export default function SideBar() {
                 <AiOutlineMail size={18} color="#fff" />
                 <p className="font-medium">Contact</p>
               </Link>
-            </div>
-          </div>
+            </ul>
+          </nav>
         </div>
-      )}
-      {window.innerWidth < 768 && (
-        <div className="w-full h-20 flex items-center justify-between">
-          <div className="px-5">
-            <Link to="/" className="cursor-pointer">
-              <img src={logo} alt="logo" />
-            </Link>
-          </div>
-          <div className="w-[50%] flex justify-end">
-            {!isMenuOpen && (
-              <div className="cursor-pointer px-5">
-                <button onClick={toggleMenu}>
-                  <IoMdMenu size={50} />
-                </button>
-              </div>
-            )}
-            {isMenuOpen && (
-              <div className="cursor-pointer px-5 w-full" onClick={toggleMenu}>
-                <IoMdClose size={50} />
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-    </header>
+      </nav>
+
+      <aside className={`${isMobile ? "h-screen absolute z-10" : "hidden"}`}>
+        <SideBarMobile>
+          <SideBarItems
+            icon={<AiOutlineHome size={18} color="#fff" />}
+            link={<Link to="/">Home</Link>}
+          />
+          <SideBarItems
+            icon={<RiComputerLine size={18} color="#fff" />}
+            link={<Link to="/projects">Projects</Link>}
+          />
+          <SideBarItems
+            icon={<AiOutlineUser size={18} color="#fff" />}
+            link={<Link to="/about">About</Link>}
+          />
+          <SideBarItems
+            icon={<AiOutlineMail size={18} color="#fff" />}
+            link={<Link to="/contact">Contact</Link>}
+          />
+        </SideBarMobile>
+      </aside>
+    </div>
   );
 }
