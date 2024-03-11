@@ -32,8 +32,8 @@ export function About() {
 
       <section>
         <h1 className="font-bold text-2xl mb-6">My Technologies</h1>
-        <div className="w-full flex justify-center">
-          <div className="grid grid-cols-2 gap-5 md:grid-cols-6 md:gap-3">
+        <div className="w-full flex justify-center md:justify-start">
+          <div className="grid grid-cols-3 gap-5 md:grid-cols-6 md:gap-3">
             <TechCard picture={cssLogo} label="CSS" />
             <TechCard picture={tailwindcssLogo} label="TailWind CSS" />
             <TechCard picture={angularLogo} label="Angular" />

@@ -34,12 +34,12 @@ export function Home() {
 
   return (
     <Container>
-      <div className={`${isMobile ? "hidden" : "absolute bottom-0"}`}>
+      <div className={`${isMobile ? "hidden" : "fixed bottom-0"}`}>
         <img src={purpleEffect} alt="Purple Effect" />
       </div>
-      <main className="absolute pr-5 pt-3 pl-2 md:p-3 flex flex-col">
+      <main className="w-full relative px-2 pt-3 md:pt-0 md:px-0 flex flex-col">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center">
-          <div className="mb-4">
+          <div className="mb-4 md:mb-2">
             <Title title="Full Stack Developer" subtitle="& UI/UX Designer" />
             <span className="flex items-center gap-2 text-lg md:text-base text-[#00FF1A]">
               <FaCircle size={5} /> Open to work
@@ -59,7 +59,7 @@ export function Home() {
             <div className="w-full flex flex-col gap-3 md:grid md:grid-cols-2 md:gap-4">
               <Card title="13+" subtitle="Complete projects" />
               <StacksCard />
-              <div className="md:w-[290px] h-[205px] rounded-xl shadow-xl bg-[#171717] flex flex-col justify-center items-center gap-4 border border-zinc-700">
+              <div className="md:w-full h-[205px] rounded-xl shadow-xl bg-[#171717] flex flex-col justify-center items-center gap-4 border border-zinc-700">
                 <span className="text-6xl font-bold flex gap-1 items-end">
                   2 <p className="text-lg">Years</p>
                 </span>

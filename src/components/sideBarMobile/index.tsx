@@ -6,7 +6,7 @@ import { createContext, useContext, useState } from "react";
 const SideBarContext = createContext({} as any);
 
 export function SideBarMobile({ children }: { children: React.ReactNode }) {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <nav className="h-dvh w-[90%] flex flex-col bg-[#171717] shadow-2xl">
