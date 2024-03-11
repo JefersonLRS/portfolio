@@ -24,6 +24,14 @@ export function Home() {
     };
   }, []);
 
+  const downloadFile = () => {
+    const link = document.createElement("a");
+    link.download = "cvJeferson.pdf";
+    link.href =
+      "https://drive.google.com/uc?export=download&id=1lJaB_oiQaLTtAmBXC66Z6Aj70947qRuV";
+    link.click();
+  };
+
   return (
     <Container>
       <div className={`${isMobile ? "hidden" : "absolute bottom-0"}`}>
@@ -37,7 +45,10 @@ export function Home() {
               <FaCircle size={5} /> Open to work
             </span>
           </div>
-          <button className="h-12 px-10 py-2 rounded-md bg-white text-black hover:bg-[#A611DA] hover:text-white transition-all ease-in-out">
+          <button
+            className="h-12 px-10 py-2 rounded-md bg-white text-black hover:bg-[#A611DA] hover:text-white transition-all ease-in-out"
+            onClick={downloadFile}
+          >
             <span className="flex items-center justify-center gap-5">
               Download CV <IoCloudDownloadOutline />
             </span>

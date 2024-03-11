@@ -7,7 +7,7 @@ import TypeScriptLogo from "../../assets/stacks/typescript.png";
 
 export function StacksCard() {
   return (
-    <div className="md:w-[290px] h-[205px] rounded-xl shadow-xl bg-[#171717] p-6 grid grid-cols-3 border border-zinc-700">
+    <div className="p-6 md:w-[290px] h-[205px] rounded-xl shadow-xl bg-[#171717] gap-10 md:gap-6 grid grid-cols-3 border border-zinc-700">
       <div className="flex justify-center items-center">
         <img src={JavaScriptLogo} alt="JavaScript" />
       </div>
