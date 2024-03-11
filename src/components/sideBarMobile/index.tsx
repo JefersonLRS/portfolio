@@ -9,7 +9,7 @@ export function SideBarMobile({ children }: { children: React.ReactNode }) {
   const [expanded, setExpanded] = useState(true);
 
   return (
-    <nav className="h-full w-[90%] flex flex-col bg-[#171717] shadow-2xl">
+    <nav className="h-dvh w-[90%] flex flex-col bg-[#171717] shadow-2xl">
       <div className="p-4 pb-2 flex justify-between items-center">
         <img
           src={logo}

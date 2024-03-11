@@ -33,7 +33,7 @@ export default function SideBar() {
     <div>
       <nav
         className={`${
-          !isMobile ? "bg-[#171717] h-screen w-full p-10" : "hidden"
+          !isMobile ? "bg-[#171717] fixed h-screen p-8" : "hidden"
         }`}
       >
         <div className="w-full flex flex-col justify-center items-center">
@@ -86,7 +86,7 @@ export default function SideBar() {
         </div>
       </nav>
 
-      <aside className={`${isMobile ? "h-screen absolute z-10" : "hidden"}`}>
+      <aside className={`${isMobile ? "h-screen fixed z-10" : "hidden"}`}>
         <SideBarMobile>
           <SideBarItems
             icon={<AiOutlineHome size={18} color="#fff" />}
