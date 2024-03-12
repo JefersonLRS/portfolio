@@ -10,7 +10,7 @@ import pokedev from "../../assets/mockups/pokedev.png";
 export function Projects() {
   return (
     <Container>
-      <Title title="My Projects" subtitle="Click to see the live project" />
+      <Title title="Some Projects" subtitle="Click to see the live project" />
 
       <div className="flex justify-center items-center flex-col mt-9">
         <div className="grid gap-3 md:grid md:grid-cols-2 md:gap-5">
