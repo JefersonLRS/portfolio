@@ -4,12 +4,22 @@ import { Title } from "../../components/title";
 import { IoMdSend } from "react-icons/io";
 import { toast } from "react-toastify";
 import emailjs from "emailjs-com";
+import { SocialMedia } from "../../components/socialMedia";
+import { IoCloudDownloadOutline } from "react-icons/io5";
 
 export function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const downloadFile = () => {
+    const link = document.createElement("a");
+    link.download = "cvJeferson.pdf";
+    link.href =
+      "https://drive.google.com/uc?export=download&id=1lJaB_oiQaLTtAmBXC66Z6Aj70947qRuV";
+    link.click();
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -55,8 +65,8 @@ export function Contact() {
     <Container>
       <Title title="Get in touch" subtitle="Follow me on social media." />
 
-      <div className="w-full p-4 bg-[#171717] rounded-md border border-zinc-700 flex flex-col justify-center items-center">
-        <h1 className="text-xl md:text-2xl font-bold mb-4">
+      <div className="w-full p-4 bg-[#171717] rounded-md border border-zinc-700 flex flex-col justify-center items-center md:mt-8 mt-6">
+        <h1 className="text-center text-4xl font-bold mb-6 md:my-8">
           Send me a message
         </h1>
 
@@ -80,7 +90,7 @@ export function Contact() {
           />
           <textarea
             placeholder="Your message"
-            className="w-full h-24 py-3 border px-6 bg-[#282828] text-white placeholder-white placeholder-opacity-50 outline-none border-zinc-700 rounded-md resize-none"
+            className="w-full h-40 md:h-24 py-3 border px-6 bg-[#282828] text-white placeholder-white placeholder-opacity-50 outline-none border-zinc-700 rounded-md resize-none"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
@@ -94,6 +104,50 @@ export function Contact() {
             )}
           </button>
         </form>
+
+        <div className="flex justify-center items-center">
+          <SocialMedia />
+        </div>
+      </div>
+      <div className="w-full p-4 bg-[#171717] rounded-md border border-zinc-700 flex flex-col justify-center items-center mt-3 py-8">
+        <h1 className="text-4xl font-bold mb-10 text-center">
+          Personal Information
+        </h1>
+        <div className="flex flex-col gap-10">
+          <section className="flex flex-col gap-2 md:grid md:grid-cols-2 md:gap-3">
+            <span>
+              <span className="opacity-80">Name:</span>{" "}
+              <span>Jeferson Luís</span>
+            </span>
+            <span>
+              <span className="opacity-80">Email:</span>{" "}
+              <span>contato.jefersonlrs@gmail.com</span>
+            </span>
+            <span>
+              <span className="opacity-80">Age:</span> <span>22 Years</span>
+            </span>
+            <span>
+              <span className="opacity-80">Address:</span>{" "}
+              <span>Brasília - DF</span>
+            </span>
+            <span>
+              <span className="opacity-80">Phone:</span>{" "}
+              <span>+55 (61) 981449680</span>
+            </span>
+            <span>
+              <span className="opacity-80">Languages: </span>
+              <span>Portuguese, English, Spanish</span>
+            </span>
+          </section>
+          <button
+            className="h-12 px-10 py-2 rounded-md bg-white text-black hover:bg-[#A611DA] hover:text-white transition-all ease-in-out w-full"
+            onClick={downloadFile}
+          >
+            <span className="flex items-center justify-center gap-5">
+              Download CV <IoCloudDownloadOutline />
+            </span>
+          </button>
+        </div>
       </div>
     </Container>
   );
