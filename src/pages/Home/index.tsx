@@ -10,12 +10,13 @@ import { useEffect, useState } from "react";
 
 export function Home() {
   const [isMobile, setIsMobile] = useState(false);
+  const [isMiniMobile, setIsMiniMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
+      setIsMiniMobile(window.innerWidth <= 360);
     };
-
     handleResize();
     window.addEventListener("resize", handleResize);
 
@@ -37,7 +38,13 @@ export function Home() {
       <div className={`${isMobile ? "hidden" : "fixed bottom-0"}`}>
         <img src={purpleEffect} alt="Purple Effect" />
       </div>
-      <main className="w-full relative px-2 pt-3 md:pt-0 md:px-0 flex flex-col">
+      <main
+        className={`${
+          isMiniMobile
+            ? "w-full relative pl-2 pt-3 md:pt-0 md:px-0 flex flex-col"
+            : "w-full relative pt-3 md:pt-0 md:px-0 flex flex-col"
+        }`}
+      >
         <div className="flex flex-col md:flex-row md:justify-between md:items-center">
           <div className="mb-4 md:mb-2">
             <Title title="Full Stack Developer" subtitle="& UI/UX Designer" />

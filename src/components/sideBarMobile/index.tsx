@@ -9,8 +9,8 @@ export function SideBarMobile({ children }: { children: React.ReactNode }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <nav className="h-dvh w-[90%] flex flex-col bg-[#171717] shadow-2xl">
-      <div className="p-4 pb-2 flex justify-between items-center">
+    <nav className="h-dvh w-full flex flex-col justify-center bg-[#171717] shadow-2xl">
+      <div className="p-5 pb-2 flex justify-between items-center">
         <img
           src={logo}
           alt="Logo"
@@ -28,7 +28,7 @@ export function SideBarMobile({ children }: { children: React.ReactNode }) {
       </div>
 
       <SideBarContext.Provider value={{ expanded, setExpanded }}>
-        <ul className="flex-1 px-3">{children}</ul>
+        <ul className="flex-1 px-4">{children}</ul>
       </SideBarContext.Provider>
 
       <div className="border-t border-gray-700 flex p-3">
