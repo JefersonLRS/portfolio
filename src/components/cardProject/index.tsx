@@ -27,7 +27,7 @@ export function CardProject({
         >
           <img src={img} alt={title} className="rounded-t-2xl" />
         </a>
-        <div className="flex w-full items-center rounded-b-2xl bg-[#101010] gap-3 py-3 px-4">
+        <div className="flex w-full items-center justify-between rounded-b-2xl bg-[#101010] gap-3 py-3 px-4">
           <div className="flex flex-col gap-3">
             <span className="font-bold md:text-xl">{title}</span>
             <p className="font-light opacity-80 text-xs md:text-sm w-[70%]">

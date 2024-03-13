@@ -31,7 +31,7 @@ export function Contact() {
     const link = document.createElement("a");
     link.download = "cvJeferson.pdf";
     link.href =
-      "https://drive.google.com/uc?export=download&id=1lJaB_oiQaLTtAmBXC66Z6Aj70947qRuV";
+      "https://drive.google.com/uc?export=download&id=1a74uwiHZ0rttKI79Nl-PqKTy6UwQYuc0";
     link.click();
   };
 
