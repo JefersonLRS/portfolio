@@ -30,7 +30,7 @@ export function Projects() {
         <Title title="Some Projects" subtitle="Click to see the live project" />
 
         <div className="mt-5">
-          <div className="grid gap-3 md:grid md:grid-cols-2 md:gap-5">
+          <div className="grid gap-3 md:grid lg:grid-cols-2 lg:gap-5">
             <CardProject
               img={devcarros}
               title="DevCarros"

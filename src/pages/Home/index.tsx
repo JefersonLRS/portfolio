@@ -63,7 +63,7 @@ export function Home() {
         </div>
         <section>
           <div className="flex flex-col md:flex-row mt-6 gap-3">
-            <div className="w-full flex flex-col gap-3 md:grid md:grid-cols-2 md:gap-4">
+            <div className="w-full flex flex-col gap-3 lg:grid md:grid-cols-1 lg:grid-cols-2 lg:gap-4">
               <Card title="13+" subtitle="Projects" />
               <StacksCard />
               <div className="md:w-full h-[205px] rounded-xl shadow-xl bg-[#171717] flex flex-col justify-center items-center gap-4 border border-zinc-700">
