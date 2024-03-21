@@ -27,9 +27,9 @@ export function Home() {
 
   const downloadFile = () => {
     const link = document.createElement("a");
-    link.download = "cvJeferson.pdf";
+    link.download = "JefersonCV-2024.pdf";
     link.href =
-      "https://drive.google.com/uc?export=download&id=1a74uwiHZ0rttKI79Nl-PqKTy6UwQYuc0";
+      "https://drive.google.com/uc?export=download&id=1OsIUd-PSLic3t409Mzw-jYCzPiUti3vQ";
 
     link.click();
   };
