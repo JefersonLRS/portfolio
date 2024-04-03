@@ -29,7 +29,7 @@ export function Home() {
     const link = document.createElement("a");
     link.download = "JefersonCV-2024.pdf";
     link.href =
-      "https://drive.google.com/uc?export=download&id=1OsIUd-PSLic3t409Mzw-jYCzPiUti3vQ";
+      "https://drive.google.com/uc?export=download&id=19dYxGemuq59Mwu4Y0Rvx3UPZPJplqqDC";
 
     link.click();
   };
