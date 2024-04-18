@@ -6,6 +6,7 @@ import devcarros from "../../assets/mockups/devcarros.png";
 import chamadosdev from "../../assets/mockups/chamadosdev.png";
 import biofit from "../../assets/mockups/biofit.png";
 import pokedev from "../../assets/mockups/pokedev.png";
+import seisemsete from "../../assets/mockups/seisemsete.png";
 import { useEffect, useState } from "react";
 
 export function Projects() {
@@ -31,6 +32,14 @@ export function Projects() {
 
         <div className="mt-5">
           <div className="grid gap-3 md:grid lg:grid-cols-2 lg:gap-5">
+            <CardProject
+              img={seisemsete}
+              title="Desafio 6em7"
+              description="A landing page designed to capture potential attendees for a paid traffic event and generate millions in revenue."
+              github="https://github.com/JefersonLRS/idg"
+              deploy="https://desafio-ignicao-digital.vercel.app"
+              tags={["Vite", "TypeScript", "TailWindCSS"]}
+            />
             <CardProject
               img={devcarros}
               title="DevCarros"
