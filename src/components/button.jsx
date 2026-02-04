@@ -12,7 +12,7 @@ export default function Button({ className = "", size = "md", children }) {
 
 	return (
 		<button className={classes}>
-			<span>{children}</span>
+			<span className="flex items-center justify-center gap-2">{children}</span>
 		</button>
 	);
 }
