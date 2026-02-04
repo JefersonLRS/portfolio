@@ -1,4 +1,4 @@
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin } from "lucide-react";
 import BorderBeamButton from "@/components/animated-button";
 import Button from "@/components/button";
 import SpaceBackground from "../components/space-background";
@@ -66,6 +66,24 @@ export default function Hero() {
 						</div>
 
 						{/* social links */}
+						<div className="flex items-center mt-8 gap-2">
+							<span>Redes Sociais: </span>
+							{[
+								{ icon: Github, url: "#" },
+								{ icon: Linkedin, url: "#" },
+							].map((social, idx) => (
+								<a
+									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+									key={idx}
+									href={social.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="inline-block p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+								>
+									<social.icon className="h-5 w-5 text-primary" />
+								</a>
+							))}
+						</div>
 					</div>
 					{/* right-column - profile image */}
 				</div>

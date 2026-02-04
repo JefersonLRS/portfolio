@@ -1,22 +1,22 @@
-import Button from "@/components/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import Button from "@/components/button";
 
 const navLinks = [
-	{ label: "About", href: "#about" },
-	{ label: "Project", href: "#project" },
-	{ label: "Experience", href: "#experience" },
-	{ label: "Testimonials", href: "#testimonials" },
+	{ label: "Sobre mim", href: "#about" },
+	{ label: "Projetos", href: "#project" },
+	{ label: "Experiência", href: "#experience" },
+	{ label: "Depoimentos", href: "#testimonials" },
 ];
 
 export default function Navbar() {
-
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
 	return (
 		<header className="fixed top-0 left-0 right-0 bg-transparent py-5 z-50">
 			<nav className="container mx-auto px-6 flex items-center justify-between">
 				<a
+					// biome-ignore lint/a11y/useValidAnchor: <explanation>
 					href="#"
 					className="text-xl font-bold tracking-tight transition hover:text-primary"
 				>
@@ -59,32 +59,34 @@ export default function Navbar() {
 
 				{/* CTA button */}
 				<div className="hidden md:block">
-					<Button size="sm">Contact Me</Button>
+					<Button size="sm">Entrar em contato</Button>
 				</div>
 
 				{/* mobile nav */}
-				<button className="md:hidden p-2 text-foreground" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-					{!isMobileMenuOpen ? (
-						<Menu size={24}/>
-					) : (
-						<X size={24}/>
-					)}
+				{/** biome-ignore lint/a11y/useButtonType: <explanation> */}
+				<button
+					className="md:hidden p-2 text-foreground"
+					onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+				>
+					{!isMobileMenuOpen ? <Menu size={24} /> : <X size={24} />}
 				</button>
 			</nav>
 
 			{/* mobile menu */}
-			<div className={`md:hidden glass-strong animate-fade-in ${isMobileMenuOpen ? "block" : "hidden"}`}>
+			<div
+				className={`md:hidden glass-strong animate-fade-in ${isMobileMenuOpen ? "block" : "hidden"}`}
+			>
 				<div className="container mx-auto p-6 flex flex-col gap-4">
 					{navLinks.map((link) => (
-							<a
-								key={link.href}
-								href={link.href}
-								className="text-lg text-muted-foreground hover:text-foreground py-2"
-							>
-								{link.label}
-							</a>
+						<a
+							key={link.href}
+							href={link.href}
+							className="text-lg text-muted-foreground hover:text-foreground py-2"
+						>
+							{link.label}
+						</a>
 					))}
-						<Button size="sm">Contact Me</Button>
+					<Button size="sm">Entrar em contato</Button>
 				</div>
 			</div>
 		</header>

@@ -11,6 +11,7 @@ export default function Button({ className = "", size = "md", children }) {
 	const classes = `${baseClass} ${sizeClasses[size]} ${className}`;
 
 	return (
+		// biome-ignore lint/a11y/useButtonType: <explanation>
 		<button className={classes}>
 			<span className="flex items-center justify-center gap-2">{children}</span>
 		</button>
