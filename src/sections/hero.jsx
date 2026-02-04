@@ -21,7 +21,7 @@ export default function Hero() {
 
 			{/* content */}
 			<div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
-				<div className="grid lg:grid-cols-2 gap-12 items-center">
+				<div className="items-center justify-center">
 					{/* left-column - text content */}
 					<div className="space-y-8">
 						<div className="animate-fade-in">
@@ -34,10 +34,15 @@ export default function Hero() {
 						{/* headline */}
 						<div className="space-y-4">
 							<h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-200">
-								Interfaces despertam interesse
+								Interfaces despertam{" "}
+								<span className="font-serif italic font-normal text-white">
+									interesse
+								</span>
 								<br />
-								<span className="text-primary glow-text">Perspectivas</span>{" "}
-								reais convertem
+								<span className="text-primary glow-text">
+									Perspectivas reais
+								</span>{" "}
+								convertem
 								<br />
 								<span className="font-serif italic font-normal text-white">
 									usuários.
@@ -67,7 +72,7 @@ export default function Hero() {
 
 						{/* social links */}
 						<div className="flex items-center mt-8 gap-2">
-							<span>Redes Sociais: </span>
+							<span className="opacity-50">Redes Sociais: </span>
 							{[
 								{ icon: Github, url: "#" },
 								{ icon: Linkedin, url: "#" },
@@ -78,7 +83,7 @@ export default function Hero() {
 									href={social.url}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="inline-block p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+									className="inline-block p-2 rounded-full glass hover:bg-primary/20 transition-colors"
 								>
 									<social.icon className="h-5 w-5 text-primary" />
 								</a>
