@@ -1,5 +1,5 @@
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "@/components/button";
 
 const navLinks = [
@@ -11,9 +11,20 @@ const navLinks = [
 
 export default function Navbar() {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+	const [isScrolled, setIsScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setIsScrolled(window.scrollY > 50);
+		};
+
+		window.addEventListener("scroll", handleScroll);
+	}, []);
 
 	return (
-		<header className="fixed top-0 left-0 right-0 bg-transparent py-5 z-50">
+		<header
+			className={`fixed top-0 left-0 right-0 bg-transparent py-5 z-50 ${isScrolled ? "glass" : ""}`}
+		>
 			<nav className="container mx-auto px-6 flex items-center justify-between">
 				<a
 					// biome-ignore lint/a11y/useValidAnchor: <explanation>

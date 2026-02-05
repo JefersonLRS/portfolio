@@ -1,11 +1,32 @@
 import { ArrowRight, Download, Github, Linkedin } from "lucide-react";
 import BorderBeamButton from "@/components/animated-button";
 import Button from "@/components/button";
+import designSystemImage from "/skills/design-system.png";
+import figmaLogo from "/skills/figma.png";
+import gitLogo from "/skills/git.png";
+import mobileImage from "/skills/mobile.png";
+import prototypeImage from "/skills/prototipagem.png";
+import reactLogo from "/skills/react.png";
+import tailwindLogo from "/skills/tailwind.png";
+import typescriptLogo from "/skills/typescript.png";
+import uxResearchImage from "/skills/ux-research.png";
 import SpaceBackground from "../components/space-background";
+
+const skills = [
+	{ name: "Design System", icon: designSystemImage },
+	{ name: "Figma", icon: figmaLogo },
+	{ name: "Git", icon: gitLogo },
+	{ name: "Mobile Design", icon: mobileImage },
+	{ name: "Prototipagem", icon: prototypeImage },
+	{ name: "React", icon: reactLogo },
+	{ name: "Tailwind CSS", icon: tailwindLogo },
+	{ name: "Typescript", icon: typescriptLogo },
+	{ name: "UX Research", icon: uxResearchImage },
+];
 
 export default function Hero() {
 	return (
-		<section className="relative min-h-screen flex items-center overflow-hidden">
+		<section className="relative min-h-screen flex flex-col items-center overflow-hidden">
 			<div className="absolute inset-0">
 				<img
 					src="/hero-bg.png"
@@ -58,13 +79,16 @@ export default function Hero() {
 
 						{/* CTAs */}
 
-						<div className="flex gap-2">
+						<div className="flex flex-col gap-2 md:flex-row">
 							<Button size="lg" className="animate-fade-in animation-delay-600">
 								Entrar em contato
 								<ArrowRight className="h-5 w-5" />
 							</Button>
 
-							<BorderBeamButton size="lg">
+							<BorderBeamButton
+								size="lg"
+								className="animate-fade-in animation-delay-600"
+							>
 								Baixar Currículo
 								<Download className="h-5 w-5" />
 							</BorderBeamButton>
@@ -90,7 +114,29 @@ export default function Hero() {
 							))}
 						</div>
 					</div>
-					{/* right-column - profile image */}
+				</div>
+			</div>
+			{/* skill section */}
+			<div className="mt-5 animate-fade-in animation-delay-600">
+				<p className="text-sm text-muted-foreground mb-6 text-center">
+					Minhas habilidades
+				</p>
+				<div className="relative overflow-hidden">
+					<div className="flex gap-0 animate-marquee">
+						{[...skills, ...skills].map((skill, idx) => (
+							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+							<div key={idx} className="flex-shrink-0 px-8 py-4">
+								<span className="text-sm md:text-xl items-center justify-center flex flex-col font-semibold text-muted-foreground opacity-50 hover:opacity-100 transition-opacity">
+									<img
+										src={skill.icon}
+										alt={skill.name}
+										className="w-24 h-24 md:w-56 md:h-56 inline-block "
+									/>
+									{skill.name}
+								</span>
+							</div>
+						))}
+					</div>
 				</div>
 			</div>
 		</section>

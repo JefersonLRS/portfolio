@@ -4,8 +4,8 @@ const SpaceBackground = () => {
 	const random = (min, max) => Math.random() * (max - min) + min;
 
 	const stars = [...Array(80)].map((_, i) => {
-		const size = random(1, 3);
-		const duration = random(3, 10);
+		const size = random(1, 4);
+		const duration = random(6, 10);
 		const delay = random(0, 5);
 
 		return {
