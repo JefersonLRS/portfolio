@@ -23,7 +23,7 @@ export default function Navbar() {
 
 	return (
 		<header
-			className={`fixed top-0 left-0 right-0 bg-transparent py-5 z-50 ${isScrolled ? "glass" : ""}`}
+			className={`fixed top-0 left-0 right-0 transition-all duration-500 z-50 border-b border-transparent ${isScrolled ? "glass-strong py-5" : "bg-transparent py-7"}`}
 		>
 			<nav className="container mx-auto px-6 flex items-center justify-between">
 				<a

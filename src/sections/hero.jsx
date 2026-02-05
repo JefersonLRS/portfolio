@@ -1,6 +1,13 @@
-import { ArrowRight, Download, Github, Linkedin } from "lucide-react";
+import {
+	ArrowRight,
+	ChevronDown,
+	Download,
+	Github,
+	Linkedin,
+} from "lucide-react";
 import BorderBeamButton from "@/components/animated-button";
 import Button from "@/components/button";
+import { TypingAnimation } from "@/components/ui/typing-animation";
 import designSystemImage from "/skills/design-system.png";
 import figmaLogo from "/skills/figma.png";
 import gitLogo from "/skills/git.png";
@@ -41,7 +48,7 @@ export default function Hero() {
 			</div>
 
 			{/* content */}
-			<div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
+			<div className="container mx-auto px-6 pt-32 pb-5 relative z-10">
 				<div className="items-center justify-center">
 					{/* left-column - text content */}
 					<div className="space-y-8">
@@ -53,15 +60,23 @@ export default function Hero() {
 						</div>
 
 						{/* headline */}
-						<div className="space-y-4">
-							<h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-200">
+						<div className="space-y-2">
+							<h1 className="text-3xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-200">
 								Interfaces despertam{" "}
 								<span className="font-serif italic font-normal text-white">
 									interesse
 								</span>
 								<br />
 								<span className="text-primary glow-text">
-									Perspectivas reais
+									<TypingAnimation
+										words={[
+											"Perspectivas reais",
+											"Soluções eficazes",
+											"Experiências memoráveis",
+											"UX Designers",
+										]}
+										loop
+									/>
 								</span>{" "}
 								convertem
 								<br />
@@ -70,7 +85,7 @@ export default function Hero() {
 								</span>
 							</h1>
 
-							<p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-400">
+							<p className="text-normal text-muted-foreground max-w-lg animate-fade-in animation-delay-400">
 								Olá, sou o Jeferson LRS - Desvendo o comportamento humano para
 								construir interfaces que antecipam desejos. Unindo investigação
 								de UX e execução técnica há 5 anos para gerar resultados reais.
@@ -80,13 +95,13 @@ export default function Hero() {
 						{/* CTAs */}
 
 						<div className="flex flex-col gap-2 md:flex-row">
-							<Button size="lg" className="animate-fade-in animation-delay-600">
+							<Button size="md" className="animate-fade-in animation-delay-600">
 								Entrar em contato
 								<ArrowRight className="h-5 w-5" />
 							</Button>
 
 							<BorderBeamButton
-								size="lg"
+								size="md"
 								className="animate-fade-in animation-delay-600"
 							>
 								Baixar Currículo
@@ -117,20 +132,17 @@ export default function Hero() {
 				</div>
 			</div>
 			{/* skill section */}
-			<div className="mt-5 animate-fade-in animation-delay-600">
-				<p className="text-sm text-muted-foreground mb-6 text-center">
-					Minhas habilidades
-				</p>
+			<div className="animate-fade-in animation-delay-600">
 				<div className="relative overflow-hidden">
 					<div className="flex gap-0 animate-marquee">
 						{[...skills, ...skills].map((skill, idx) => (
 							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-							<div key={idx} className="flex-shrink-0 px-8 py-4">
-								<span className="text-sm md:text-xl items-center justify-center flex flex-col font-semibold text-muted-foreground opacity-50 hover:opacity-100 transition-opacity">
+							<div key={idx} className="shrink-0 px-8 py-4">
+								<span className="text-sm md:text-normal items-center justify-center flex flex-col font-semibold text-muted-foreground opacity-50 hover:opacity-100 transition-opacity">
 									<img
 										src={skill.icon}
 										alt={skill.name}
-										className="w-24 h-24 md:w-56 md:h-56 inline-block "
+										className="w-24 h-24 md:w-36 md:h-36 inline-block "
 									/>
 									{skill.name}
 								</span>
@@ -138,6 +150,19 @@ export default function Hero() {
 						))}
 					</div>
 				</div>
+			</div>
+
+			{/* SCROLL DOWN */}
+			<div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-fade-in animation-delay-800">
+				<a
+					href="#about"
+					className="flex flex-col items-center justify-center gap-2 text-muted-foreground hover:text-primary"
+				>
+					<span className="text-xs uppercase tracking-wider flex flex-col items-center justify-center">
+						Scroll
+						<ChevronDown className="h-6 w-6 animate-bounce" />
+					</span>
+				</a>
 			</div>
 		</section>
 	);

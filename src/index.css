@@ -44,6 +44,16 @@
 }
 
 @layer components {
+	@keyframes glow-pulse {
+		0% {
+			text-shadow: 0 0 15px
+				color-mix(in srgb, var(--color-primary) 40%, transparent);
+		}
+		100% {
+			text-shadow: 0 0 30px
+				color-mix(in srgb, var(--color-primary) 60%, transparent);
+		}
+	}
 	.glass {
 		background: color-mix(in srgb, var(--color-surface) 50%, transparent);
 		backdrop-filter: blur(16px);
@@ -56,8 +66,7 @@
 	}
 
 	.glow-text {
-		text-shadow: 0 0 30px
-			color-mix(in srgb, var(--color-primary) 90%, transparent);
+		animation: glow-pulse 3s ease-in-out infinite alternate;
 	}
 }
 
