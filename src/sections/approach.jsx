@@ -1,5 +1,6 @@
 import SpaceBackground from "@/components/space-background";
 import { OrbitingCircles } from "@/components/ui/orbiting-circles";
+import { ShineBorder } from "@/components/ui/shine-border";
 import coding from "/skills/coding.png";
 import designSystem from "/skills/design-system.png";
 import mobile from "/skills/mobile.png";
@@ -56,7 +57,7 @@ export default function Approach() {
 			</div>
 
 			<div className="container mx-auto px-6 relative z-10">
-				<div className="flex items-center">
+				<div className="flex flex-col lg:flex-row items-center">
 					{/* left-side */}
 					<div className="text-left flex-1 mx-auto max-w-3xl mb-16">
 						<span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
@@ -90,6 +91,7 @@ export default function Approach() {
 						<OrbitingCircles>
 							{steps.map((step, index) => (
 								<div
+									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 									key={index}
 									className="flex flex-col items-center justify-center"
 								>
@@ -106,11 +108,32 @@ export default function Approach() {
 							))}
 						</OrbitingCircles>
 					</div>
+
+					{/* mobile content */}
+					<div className="md:hidden flex flex-col gap-6">
+						{steps.map((step, idx) => (
+							<div
+								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+								key={idx}
+								className="relative w-full overflow-hidden glass p-6 rounded-xl items-center justify-center"
+							>
+								<ShineBorder />
+								<div>
+									<img src={step.image} alt={step.title} />
+								</div>
+								<span className="flex flex-col gap-2">
+									<h2 className="font-semibold uppercase text-center">
+										{step.title}
+									</h2>
+									<p className="text-sm text-muted-foreground text-center">
+										{step.description}
+									</p>
+								</span>
+							</div>
+						))}
+					</div>
 				</div>
 			</div>
-
-			{/* mobile content */}
-			<div className="md:hidden"></div>
 		</section>
 	);
 }
