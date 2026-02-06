@@ -78,6 +78,7 @@ export default function Projects() {
 						>
 							{/* image */}
 							<div className="relative overflow-hidden aspect-video">
+								{/** biome-ignore lint/suspicious/noArrayIndexKey: <explanation> */}
 								<Lens key={idx}>
 									<img src={project.image} alt={project.title} />
 								</Lens>

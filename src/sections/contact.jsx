@@ -1,7 +1,8 @@
 import emailjs from "@emailjs/browser";
-import { Loader, Mail, Send } from "lucide-react";
+import { Download, Loader, Mail, Send } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import BorderBeamButton from "@/components/animated-button";
 import Button from "@/components/button";
 
 const contactInfo = [
@@ -21,6 +22,16 @@ export default function Contact() {
 	});
 	const [isLoading, setIsLoading] = useState(false);
 	const [submitStatus, setSubmitStatus] = useState({ type: null, message: "" });
+
+	const downloadFile = () => {
+		const itemUrl = "/curriculo/curriculo-ux-dev.pdf";
+		const link = document.createElement("a");
+		link.href = itemUrl;
+		link.download = "Curriculo - UX Designer.pdf";
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	};
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -185,6 +196,15 @@ export default function Contact() {
 									</>
 								)}
 							</Button>
+							<BorderBeamButton
+								size="lg"
+								className="w-full animate-fade-in animation-delay-600"
+								onClick={downloadFile}
+								type="button"
+							>
+								Baixar Currículo
+								<Download className="h-5 w-5" />
+							</BorderBeamButton>
 						</form>
 					</div>
 				</div>

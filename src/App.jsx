@@ -4,6 +4,7 @@ import About from "@/sections/about";
 import Approach from "@/sections/approach";
 import Contact from "@/sections/contact";
 import Experience from "@/sections/experience";
+import Footer from "@/sections/footer";
 import Hero from "@/sections/hero";
 import Projects from "@/sections/projects";
 
@@ -19,6 +20,7 @@ function App() {
 				<Experience />
 				<Approach />
 				<Contact />
+				<Footer />
 			</main>
 		</div>
 	);

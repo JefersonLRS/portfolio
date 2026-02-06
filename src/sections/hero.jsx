@@ -32,6 +32,16 @@ const skills = [
 ];
 
 export default function Hero() {
+	const downloadFile = () => {
+		const itemUrl = "/curriculo/curriculo-ux-dev.pdf";
+		const link = document.createElement("a");
+		link.href = itemUrl;
+		link.download = "Curriculo - UX Designer.pdf";
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	};
+
 	return (
 		<section className="relative min-h-screen flex flex-col items-center overflow-hidden">
 			<div className="absolute inset-0">
@@ -95,7 +105,12 @@ export default function Hero() {
 						{/* CTAs */}
 
 						<div className="flex flex-col gap-2 md:flex-row">
-							<Button size="md" className="animate-fade-in animation-delay-600">
+							<Button
+								size="md"
+								className="animate-fade-in animation-delay-600"
+								// biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
+								onClick={() => (window.location.href = "#contact")}
+							>
 								Entrar em contato
 								<ArrowRight className="h-5 w-5" />
 							</Button>
@@ -103,6 +118,7 @@ export default function Hero() {
 							<BorderBeamButton
 								size="md"
 								className="animate-fade-in animation-delay-600"
+								onClick={downloadFile}
 							>
 								Baixar Currículo
 								<Download className="h-5 w-5" />
@@ -113,8 +129,11 @@ export default function Hero() {
 						<div className="flex items-center mt-8 gap-2">
 							<span className="opacity-50">Redes Sociais: </span>
 							{[
-								{ icon: Github, url: "#" },
-								{ icon: Linkedin, url: "#" },
+								{ icon: Github, url: "https://github.com/JefersonLRS" },
+								{
+									icon: Linkedin,
+									url: "https://www.linkedin.com/in/jefersonlrs/",
+								},
 							].map((social, idx) => (
 								<a
 									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>

@@ -77,7 +77,7 @@ export default function Navbar() {
 				<div className="hidden md:block">
 					{/** biome-ignore lint/suspicious/noAssignInExpressions: <explanation> */}
 					<Button size="sm" onClick={() => (window.location.href = "#contact")}>
-						Entrar em contato
+						Contato
 					</Button>
 				</div>
 
