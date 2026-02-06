@@ -7,9 +7,9 @@ export function OrbitingCircles({
 	children,
 	reverse,
 	duration = 30,
-	radius = 300,
+	radius = 280,
 	path = true,
-	iconSize = 150,
+	iconSize = 120,
 	speed = 0.4,
 	...props
 }) {
