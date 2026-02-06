@@ -87,7 +87,7 @@ export default function Approach() {
 					{/* right-side */}
 
 					{/* desktop content */}
-					<div className="hidden md:flex flex-2 relative h-[800px] w-full flex-col items-center justify-center overflow-hidden">
+					<div className="hidden md:flex flex-2 relative h-[900px] w-full flex-col items-center justify-center overflow-hidden">
 						<OrbitingCircles>
 							{steps.map((step, index) => (
 								<div

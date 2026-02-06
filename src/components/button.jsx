@@ -3,6 +3,7 @@ export default function Button({
 	size = "md",
 	children,
 	onClick,
+	...props
 }) {
 	const baseClass =
 		"relative overflow-hidden rounded-full font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25 cursor-pointer inline-flex items-center justify-center";
@@ -17,7 +18,7 @@ export default function Button({
 
 	return (
 		// biome-ignore lint/a11y/useButtonType: <explanation>
-		<button onClick={onClick} className={classes}>
+		<button onClick={onClick} className={classes} {...props}>
 			<span className="flex items-center justify-center gap-2">{children}</span>
 		</button>
 	);

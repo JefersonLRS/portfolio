@@ -21,6 +21,11 @@ export default function Navbar() {
 		window.addEventListener("scroll", handleScroll);
 	}, []);
 
+	const handleLinkClick = (where) => {
+		setIsMobileMenuOpen(false);
+		window.location.href = where;
+	};
+
 	return (
 		<header
 			className={`fixed top-0 left-0 right-0 transition-all duration-500 z-50 border-b border-transparent ${isScrolled ? "glass-strong py-5" : "bg-transparent py-7"}`}
@@ -70,7 +75,10 @@ export default function Navbar() {
 
 				{/* CTA button */}
 				<div className="hidden md:block">
-					<Button size="sm">Entrar em contato</Button>
+					{/** biome-ignore lint/suspicious/noAssignInExpressions: <explanation> */}
+					<Button size="sm" onClick={() => (window.location.href = "#contact")}>
+						Entrar em contato
+					</Button>
 				</div>
 
 				{/* mobile nav */}
@@ -98,7 +106,7 @@ export default function Navbar() {
 							{link.label}
 						</a>
 					))}
-					<Button onClick={() => setIsMobileMenuOpen(false)}>
+					<Button onClick={() => handleLinkClick("#contact")}>
 						Entrar em contato
 					</Button>
 				</div>

@@ -158,6 +158,9 @@ export default function Experience() {
 											/>
 										</div>
 									</div>
+									<p className="text-muted-foreground/70 mt-2 text-[12px]">
+										{exp.period}
+									</p>
 								</div>
 							</div>
 						))}

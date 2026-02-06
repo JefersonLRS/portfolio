@@ -7,7 +7,7 @@ const projects = [
 	{
 		title: "Biofit",
 		description:
-			"A fitness app that helps users track their workouts and progress.",
+			"Uma landing page para uma academia com estilo de containers sobrepostos e design responsivo.",
 		image: "/projects/biofit.webp",
 		tags: ["Next.js", "Tailwind CSS"],
 		link: "#",
@@ -15,15 +15,14 @@ const projects = [
 	{
 		title: "NextBuild",
 		description:
-			"A fitness app that helps users track their workouts and progress.",
+			"Um SaaS em desenvolvimento para gerenciamento de projetos de construção.",
 		image: "/projects/nextbuild.webp",
 		tags: ["Figma"],
 		link: "#",
 	},
 	{
 		title: "Travel",
-		description:
-			"A fitness app that helps users track their workouts and progress.",
+		description: "Um aplicativo em desenvolvimento para entregas e viagens.",
 		image: "/projects/travel.webp",
 		tags: ["Figma"],
 		link: "#",
@@ -31,7 +30,7 @@ const projects = [
 	{
 		title: "PprTattoo",
 		description:
-			"A fitness app that helps users track their workouts and progress.",
+			"Um SaaS whitelabel em desenvolvimento para estúdios de tatuagem.",
 		image: "/projects/pprtatto.webp",
 		tags: ["Figma"],
 		link: "#",

@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/sonner";
 import Navbar from "@/layout/navbar";
 import About from "@/sections/about";
 import Approach from "@/sections/approach";
@@ -11,6 +12,7 @@ function App() {
 		<div className="min-h-screen overflow-x-hidden">
 			<Navbar />
 			<main>
+				<Toaster position={"top-center"} />
 				<Hero />
 				<About />
 				<Projects />
