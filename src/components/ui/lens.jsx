@@ -47,6 +47,7 @@ export function Lens({
 		currentPosition.y
 	}px, ${lensColor} 100%, transparent 100%)`;
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	const LensContent = useMemo(() => {
 		const { x, y } = currentPosition;
 
@@ -78,6 +79,7 @@ export function Lens({
 	}, [currentPosition, lensSize, lensColor, zoomFactor, children, duration]);
 
 	return (
+		// biome-ignore lint/a11y/useSemanticElements: <explanation>
 		<div
 			ref={containerRef}
 			className="relative z-20 overflow-hidden rounded-xl"
@@ -87,6 +89,7 @@ export function Lens({
 			onKeyDown={handleKeyDown}
 			role="region"
 			aria-label={ariaLabel}
+			// biome-ignore lint/a11y/noNoninteractiveTabindex: <explanation>
 			tabIndex={0}
 		>
 			{children}

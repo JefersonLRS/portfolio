@@ -84,9 +84,9 @@ export default function Projects() {
 								</Lens>
 							</div>
 							{/* content */}
-							<div className="p-6 space-y-4">
+							<div className="space-y-4">
 								<div className="flex items-start">
-									<h3 className="text-xl font-semibold hover:text-primary">
+									<h3 className="text-xl mt-4 font-semibold hover:text-primary">
 										{project.title}
 									</h3>
 								</div>
