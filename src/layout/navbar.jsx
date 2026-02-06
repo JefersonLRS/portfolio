@@ -6,7 +6,7 @@ const navLinks = [
 	{ label: "Sobre mim", href: "#about" },
 	{ label: "Projetos", href: "#project" },
 	{ label: "Experiência", href: "#experience" },
-	{ label: "Depoimentos", href: "#testimonials" },
+	{ label: "Abordagem", href: "#approach" },
 ];
 
 export default function Navbar() {

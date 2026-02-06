@@ -64,7 +64,7 @@ export default function Hero() {
 							<h1 className="text-3xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-200">
 								Interfaces despertam{" "}
 								<span className="font-serif italic font-normal text-white">
-									interesse
+									interesse.
 								</span>
 								<br />
 								<span className="text-primary glow-text">

@@ -50,12 +50,14 @@ export default function About() {
 
 						<div className="flex flex-col gap-8 text-muted-foreground animate-fade-in animation-delay-200">
 							<p>
-								Especialista em diagnosticar gargalos de usabilidade que impedem
-								a conversão e a retenção de usuários. Com 5 anos de experiência
-								em produtos digitais complexos (SaaS e B2B),
+								Olá, sou o Jeferson LRS - Formado em Análise e desenvolvimento
+								de sistemas, sou especialista em diagnosticar gargalos de
+								usabilidade que impedem a conversão e a retenção de usuários.
+								Com 5 anos de experiência em produtos digitais complexos (SaaS e
+								B2B),
 							</p>
 							<p>
-								utilizo UX Research e testes de usabilidade para fundamentar
+								Utilizo UX Research e testes de usabilidade para fundamentar
 								decisões estratégicas de arquitetura de informação. Minha
 								abordagem elimina o "achismo": traduzo regras de negócio densas
 								e processos burocráticos em jornadas fluidas, garantindo que
